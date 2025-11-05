@@ -9,11 +9,11 @@ pipeline {
     }
 
     stages {
-
+      
         stage("SCM Checkout"){
         steps{
         powershell 'echo "Hello from the workspace"'
-        git 'https://github.com/shengcode/dock_aws.git'
+         git branch: 'main', credentialsId: 'PAT_Jenkins', url: 'https://github.com/shengcode/dock_aws.git'
         }
     }
 
