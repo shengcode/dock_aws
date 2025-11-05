@@ -12,7 +12,7 @@ pipeline {
 
         stage("SCM Checkout"){
         steps{
-        sh 'echo "Hello from the workspace"'
+        powershell 'echo "Hello from the workspace"'
         git 'https://github.com/shengcode/dock_aws.git'
         }
     }
@@ -20,8 +20,8 @@ pipeline {
         stage("buildImage") {
             steps {
                 script {
-                    echo "Building Docker Image..."
-                    sh "docker build -t ${ImageRegistry}/${JOB_NAME}:${BUILD_NUMBER} ."
+                    powershell 'echo "Building Docker Image..."'
+                    powershell "docker build -t ${ImageRegistry}/${JOB_NAME}:${BUILD_NUMBER} ."
                 }
             }
         }
