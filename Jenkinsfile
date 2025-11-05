@@ -12,6 +12,7 @@ pipeline {
 
         stage("SCM Checkout"){
         steps{
+        sh 'echo "Hello from the workspace"'
         git 'https://github.com/shengcode/dock_aws.git'
         }
     }
