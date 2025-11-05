@@ -12,7 +12,7 @@ pipeline {
 
         stage("SCM Checkout"){
         steps{
-        git 'https://github.com/shengcode/dock_aws.git' #... should be your git path
+        git 'https://github.com/shengcode/dock_aws.git'
         }
     }
 
